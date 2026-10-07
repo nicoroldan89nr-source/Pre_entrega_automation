@@ -31,5 +31,11 @@ def test_login_exitoso():
 
     assert nombre_producto == "Sauce Labs Backpack"
     assert precio_producto == "$29.99"
+
+    menu = driver.find_element(By.ID, "react-burger-menu-btn")
+    assert menu.is_displayed()
+
+    filtro = driver.find_element(By.CLASS_NAME, "product_sort_container")
+    assert filtro.is_displayed()
  finally:
    driver.quit()
